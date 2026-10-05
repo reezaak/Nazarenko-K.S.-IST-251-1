@@ -1,0 +1,35 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* 4 карточки в ряд на широких экранах */
+.list > * {
+  flex: 1 1 calc(25% - 1.5rem);
+  min-width: 240px;
+}
+
+/* 3 карточки на средних */
+@media (max-width: 1024px) {
+  .list > * {
+    flex: 1 1 calc(33.333% - 1.5rem);
+  }
+}
+
+/* 2 карточки на узких */
+@media (max-width: 768px) {
+  .list > * {
+    flex: 1 1 calc(50% - 1.5rem);
+  }
+}
+
+/* 1 карточка на мобильных */
+@media (max-width: 520px) {
+  .list > * {
+    flex: 1 1 100%;
+  }
+}
